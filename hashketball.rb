@@ -186,14 +186,12 @@ def team_colors(input_name)
   game_hash.each { |home_key, home_value|
     home_value.each { |titles, content|
     if content == input_name
-      final_color = game_hash[home_key][:colors]
+      return game_hash[home_key][:colors]
       #binding.pry
-    else
-      next
     end
     }
   }
-  final_color
+  #final_color
 end
 
 def team_names
@@ -234,16 +232,13 @@ def player_stats(input_name)
           player_details.length.times { |i|
             if player_details[i][:player_name] == input_name
               fin_har = player_details[i]
-            else
-              next
             end
           }
-        else
-          next
         end
       }
   }
   fin_har
+  binding.pry
 end
 
 def big_shoe_rebounds
